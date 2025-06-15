@@ -50,17 +50,7 @@ if Util then
         require(CameraShaker):Stop()
     end
 end
-print("--[[Loaded UI]]--")
-local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
-Window = Fluent:CreateWindow({
-    Title = "MEC ME Hub-Blox Fruit [ Free ] By TP",
-    SubTitle = "BAN DA BI BAO CONG AN",
-    TabWidth = 155,
-    Size = UDim2.fromOffset(500, 350),
-    Acrylic = false, 
-    Theme = "Dark",
-    MinimizeKey = Enum.KeyCode.LeftControl 
-})
+
 local Players = game:GetService("Players")
 local Player = Players.LocalPlayer
 getgenv().WalkSpeed = 16
@@ -384,7 +374,7 @@ function Hop()
     end
     Teleport()
 end)
-Server = Window:AddTab({ Title = "Tab Status And Server", Icon = "" })
+Server = Window:AddTab({ Title = "Tab TIME", Icon = "" })
 Time = Server:AddParagraph({
     Title = "Time Zone",
     Content = ""
@@ -436,6 +426,17 @@ spawn(function()
         UpdateTime()
         wait(1)
     end
+	print("--[[Loaded UI]]--")
+local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+Window = Fluent:CreateWindow({
+    Title = "MEC ME Hub-Blox Fruit [ Free ] By TP",
+    SubTitle = "BAN DA BI BAO CONG AN",
+    TabWidth = 155,
+    Size = UDim2.fromOffset(500, 350),
+    Acrylic = false, 
+    Theme = "Dark",
+    MinimizeKey = Enum.KeyCode.LeftControl 
+})
 endgame.StarterGui:SetCore("SendNotification", {
     Title = "Yes Or No";
     Text = "U want reset Config?";
