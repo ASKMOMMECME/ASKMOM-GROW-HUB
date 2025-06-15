@@ -27,14 +27,7 @@ if EffectContainer then
             hookfunction(result, function() end)
         end
     end
-    local Respawn = EffectContainer:FindFirstChild("Respawn")
-    if Respawn then
-        local success, result = pcall(require, Respawn)
-        if success and type(result) == "function" then
-            hookfunction(result, function() end)
-        end
-    end
-end
+    
 local GuideModule = ReplicatedStorage:FindFirstChild("GuideModule")
 if GuideModule then
     local success, module = pcall(require, GuideModule)
@@ -50,7 +43,21 @@ if Util then
         require(CameraShaker):Stop()
     end
 end
-
+PLAYER = Window:AddTab({ Title = "Tab PLAYER", Icon = "" })
+local Playerslist = {}
+for i, player in ipairs(game.Players:GetPlayers()) do
+    Playerslist[i] = player.Name
+end
+Input = PLAYER:AddInput("Input", {
+     Title = "Input WalkSpeed",
+     Default = 100,
+     Placeholder = "Input",
+     Numeric = true,
+     Finished = true,
+     Callback = function(Value)
+         getgenv().WalkSpeed = Value
+     end
+})
 local Players = game:GetService("Players")
 local Player = Players.LocalPlayer
 getgenv().WalkSpeed = 16
@@ -95,11 +102,7 @@ Toggle:OnChanged(function(Value)
         end
     end
 end)
-PLAYER = Window:AddTab({ Title = "Tab PLAYER", Icon = "" })
-local Playerslist = {}
-for i, player in ipairs(game.Players:GetPlayers()) do
-    Playerslist[i] = player.Name
-end
+
 Input = PLAYER:AddInput("Input", {
      Title = "Input WalkSpeed",
      Default = 100,
