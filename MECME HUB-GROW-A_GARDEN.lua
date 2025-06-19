@@ -1,6 +1,6 @@
 
 -- Grow a Garden Script
--- LAJ HUB v2
+-- MECME HUB v1
 
 if not game:IsLoaded() then
     print("Waiting for game to load...")
