@@ -1,4 +1,3 @@
-
 local Players = game:GetService("Players")
 local TweenService = game:GetService("TweenService")
 local Lighting = game:GetService("Lighting")
@@ -24,7 +23,7 @@ bg.BackgroundTransparency = 1
 bg.ZIndex = 0
 TweenService:Create(bg, TweenInfo.new(0.5), {BackgroundTransparency = 0.3}):Play()
 
-local word = "STELLAR"
+local word = "MECME"
 local letters = {}
 
 local function tweenOutAndDestroy()
@@ -394,7 +393,7 @@ local function startHoneyFarm()
     end)
 end
 
-local ui = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
+local ui = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 
 function gradient(text, startColor, endColor)
     local result = ""
